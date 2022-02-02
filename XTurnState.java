@@ -40,8 +40,6 @@ public class XTurnState implements TicTacToeState{
         }
 
         game.SetState(game.OTurnState);
-        System.out.println(game.getGrid());
-
     }
 
 }
