@@ -176,11 +176,6 @@ public class TicTacToe {
 
     public void PrintGrid() {
         gui.PrintBuffer();
-        /*
-         * for (int i = 0; i < 9; i += 3) {
-         * System.out.printf("%s %s %s\n", grid[i], grid[i + 1], grid[i + 2]);
-         * }
-         */
     }
 
 }
