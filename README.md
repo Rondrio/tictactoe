@@ -21,3 +21,5 @@ Usage:
 ```
 java TestTicTacToe
 ```
+
+### Disclaimer: Its recommended to start the game in a console with at least 37 heigth and 160 width (Fullscreen)
