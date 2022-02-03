@@ -31,8 +31,8 @@ public class GUI {
 
         try {
             grid = ImageIO.read(new File("textures/grid.png"));
-            x = ImageIO.read(new File("textures/o.png"));
-            o = ImageIO.read(new File("textures/x.png"));
+            o = ImageIO.read(new File("textures/o.png"));
+            x = ImageIO.read(new File("textures/x.png"));
 
         } catch (Exception e) {
             System.out.println("unable to load textures");
@@ -40,15 +40,16 @@ public class GUI {
         }
     }
 
-    public void PrintImage(BufferedImage image,int xPos, int yPos,int height, int width, String color) {
+    public void PrintImage(BufferedImage image,int yPos, int xPos,int wantedHeight,int wantedWidth, String color) {
         int xCounter = xPos;
         int yCounter = yPos;
 
-        for (int y = 0; y < image.getHeight(); y += Math.ceil(image.getHeight() / height)) {
-            for (int x = 0; x < image.getWidth(); x += Math.ceil(image.getWidth() / width)) {
+        for (int y = 0; y < image.getHeight() && yCounter < height; y += Math.ceil(image.getHeight() / wantedHeight)) {
+            for (int x = 0; x < image.getWidth() && xCounter < width; x += Math.ceil(image.getWidth() / wantedWidth)) {
                 Color c = new Color(image.getRGB(x, y), true);
 
                 if (c.getAlpha() < 200) {
+                    xCounter++;
                     continue;
                 }
 
@@ -66,13 +67,16 @@ public class GUI {
                         screenBuffer[yCounter][xCounter] = RED + " " + RESET;
                         break;
                 }
-
+                xCounter++;
             }
+            yCounter++;
+            xCounter = xPos;
         }
     }
 
 
     public void PrintBuffer() {
+        System.out.printf("\u001B[H");
         String output = "";
         
         for (int y = 0; y < height; y++) {

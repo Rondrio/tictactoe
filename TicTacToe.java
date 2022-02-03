@@ -1,5 +1,7 @@
 public class TicTacToe {
 
+    GUI gui = new GUI();
+
     TicTacToeState SplashState;
     TicTacToeState XTurnState;
     TicTacToeState OTurnState;
@@ -14,6 +16,7 @@ public class TicTacToe {
     int round;
 
     TicTacToe() {
+        gui.PrintImage(gui.grid, 0, 0, 37, 160, "black");
         SplashState = new SplashState(this);
         XTurnState = new XTurnState(this);
         OTurnState = new OTurnState(this);
@@ -47,7 +50,86 @@ public class TicTacToe {
             return false;
         }
 
+        int sizeHeight = 10;
+        int sizeWidth = 10;
+
+        int column1 = 22;
+        int column2 = 80;
+        int column3 = 130;
+
+        int row1 = 1;
+        int row2 = 15;
+        int row3 = 27;
+
         grid[pos] = player;
+        switch (pos) {
+            case 0:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row1, column1, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row1, column1, sizeHeight, sizeWidth, "red");
+                }
+                break;
+            case 1:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row1, column2, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row1, column2, sizeHeight, sizeWidth, "red");
+                }
+                break;
+            case 2:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row1, column3, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row1, column3, sizeHeight, sizeWidth, "red");
+                }
+                break;
+
+            case 3:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row2, column1, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row2, column1, sizeHeight, sizeWidth, "red");
+                }
+                break;
+            case 4:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row2, column2, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row2, column2, sizeHeight, sizeWidth, "red");
+                }
+                break;
+            case 5:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row2, column3, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row2, column3, sizeHeight, sizeWidth, "red");
+                }
+                break;
+
+            case 6:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row3, column1, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row3, column1, sizeHeight, sizeWidth, "red");
+                }
+                break;
+            case 7:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row3, column2, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row3, column2, sizeHeight, sizeWidth, "red");
+                }
+                break;
+            case 8:
+                if (player == "O") {
+                    gui.PrintImage(gui.o, row3, column3, sizeHeight, sizeWidth, "blue");
+                } else {
+                    gui.PrintImage(gui.x, row3, column3, sizeHeight, sizeWidth, "red");
+                }
+                break;
+        }
+
         return true;
     }
 
@@ -93,9 +175,12 @@ public class TicTacToe {
     }
 
     public void PrintGrid() {
-        for (int i = 0; i < 9; i += 3) {
-            System.out.printf("%s %s %s\n", grid[i], grid[i + 1], grid[i + 2]);
-        }
+        gui.PrintBuffer();
+        /*
+         * for (int i = 0; i < 9; i += 3) {
+         * System.out.printf("%s %s %s\n", grid[i], grid[i + 1], grid[i + 2]);
+         * }
+         */
     }
 
 }

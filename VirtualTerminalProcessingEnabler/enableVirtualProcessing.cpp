@@ -34,7 +34,7 @@ int main()
     wprintf(L"\x1b[39mThis text has restored the foreground color only.\r\n");
     wprintf(L"\x1b[49mThis text has restored the background color only.\r\n");
 
-    system("java TestGUI");
+    system("java TestTicTacToe");
 
     return 0;
 }
