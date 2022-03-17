@@ -5,12 +5,12 @@
 ### Windows:
 Building:
 ```
-gcc VirtualTerminalProcessingEnabler/enableVirtualProcessing.cpp
+gcc VirtualTerminalProcessingEnabler/enableVirtualProcessing.cpp -o tictactoe.exe
 javac TestTicTacToe.java
 ```
 Usage:
 ```
-a.exe
+tictactoe.exe
 ```
 ### Linux
 Building
