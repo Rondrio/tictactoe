@@ -1,3 +1,5 @@
+import AI.AI;
+
 public class SplashState implements TicTacToeState {
 
     TicTacToe game;
@@ -8,13 +10,11 @@ public class SplashState implements TicTacToeState {
 
     @Override
     public void PrintState() {
-        // TODO Auto-generated method stub
-        System.out.println("Welcome to Tic-Tac-Toe\nPress O/X for O-/X-Player starting");
+        System.out.println("Welcome to Tic-Tac-Toe\nPress O/X for O-/X-Player starting\nPress a to play against ai");
     }
 
     @Override
     public void HandleKeypress(String k) {
-        // TODO Auto-generated method stub
         switch(k.toLowerCase()) {
             case "o":
                 game.SetState(game.OTurnState);
@@ -22,6 +22,9 @@ public class SplashState implements TicTacToeState {
             case "x":
                 game.SetState(game.XTurnState);
                 break;
+            case "a":
+                game.ai = new AI();
+                game.SetState(game.XTurnState);
             default:
                 game.SetState(game.XTurnState);
         }

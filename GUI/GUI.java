@@ -1,3 +1,5 @@
+package GUI;
+
 import java.io.File;
 import java.awt.Color;
 
@@ -22,7 +24,7 @@ public class GUI {
 
     private String[][] screenBuffer = new String[height][width];
 
-    GUI() {
+    public GUI() {
         for (int y = 0; y < screenBuffer.length; y++) {
             for (int x = 0; x < screenBuffer[y].length; x++) {
                 screenBuffer[y][x] = WHITE + " " + RESET;

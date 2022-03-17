@@ -1,6 +1,11 @@
+import GUI.GUI;
+import AI.AI;
+
 public class TicTacToe {
 
     GUI gui = new GUI();
+
+    AI ai;
 
     TicTacToeState SplashState;
     TicTacToeState XTurnState;
